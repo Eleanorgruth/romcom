@@ -103,7 +103,9 @@ function saveUserInput() {
   currentCover = new Cover(coverImage.src, title.innerText, tagline1.innerText, tagline2.innerText);
 };
 
-
+function saveCurrentCover() {
+  if (!savedCovers.includes(currentCover))
+  savedCovers.push(currentCover);
 }
 // We've provided one function to get you started
 function getRandomIndex(array) {
