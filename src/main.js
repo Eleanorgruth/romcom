@@ -22,6 +22,7 @@ var tagline1Input = document.querySelector('.user-desc1');
 var tagline2Input = document.querySelector('.user-desc2');
 
 var makeMyBookButton = document.querySelector('.create-new-book-button');
+
 // We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows"),
@@ -45,8 +46,7 @@ makeMyBookButton.addEventListener('click', saveUserInput);
 
 saveCoverButton.addEventListener('click', saveCurrentCover);
 
-
-
+savedCoverSection.addEventListener('dblclick', deleteMiniCover);
 // Create your event handlers and other functions here 👇
 function randomize() {
   title.innerText = getRandomIndex(titles);
@@ -118,6 +118,12 @@ function saveCurrentCover() {
   </div>`
   }
 }
+
+function deleteMiniCover(clickLocation) {
+    var miniCover = clickLocation.target.closest("section > div")
+    miniCover.remove()
+  }
+
 // We've provided one function to get you started
 function getRandomIndex(array) {
   var i = Math.floor(Math.random() * array.length);
