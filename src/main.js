@@ -24,7 +24,7 @@ var tagline2Input = document.querySelector('.user-desc2');
 var makeMyBookButton = document.querySelector('.create-new-book-button');
 // We've provided a few variables below
 var savedCovers = [
-  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows"),
+  // new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows"),
 //this will be an array of new Cover instances
 ];
 
@@ -74,7 +74,6 @@ function showSavedView() {
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
-  savedCoverSection.innerHTML = savedCovers
 };
 
 function showHomeView() {
@@ -104,8 +103,15 @@ function saveUserInput() {
 };
 
 function saveCurrentCover() {
-  if (!savedCovers.includes(currentCover))
+  if (!savedCovers.includes(currentCover)) {
   savedCovers.push(currentCover);
+  savedCoverSection.innerHTML +=
+  `<div class="mini-cover">
+    <img class="mini-cover" src=${currentCover.cover}>
+    <h2 class="cover-title">${currentCover.title}</h2>
+    <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
+  </div>`
+  }
 }
 // We've provided one function to get you started
 function getRandomIndex(array) {
