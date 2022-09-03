@@ -1,5 +1,4 @@
 // Create variables targetting the relevant DOM elements here 👇
-var form = document.querySelector('form');
 var title = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
 var tagline2 = document.querySelector('.tagline-2');
@@ -15,6 +14,7 @@ var viewSavedButton = document.querySelector('.view-saved-button');
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
 var savedView = document.querySelector('.saved-view');
+var savedCoverSection = document.querySelector('.saved-covers-section')
 
 var coverImageInput = document.querySelector('.user-cover');
 var titleInput = document.querySelector('.user-title');
@@ -43,6 +43,10 @@ homeButton.addEventListener('click', showHomeView);
 
 makeMyBookButton.addEventListener('click', saveUserInput);
 
+saveCoverButton.addEventListener('click', saveCurrentCover);
+
+
+
 // Create your event handlers and other functions here 👇
 function randomize() {
   title.innerText = getRandomIndex(titles);
@@ -70,6 +74,7 @@ function showSavedView() {
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
+  savedCoverSection.innerHTML = savedCovers
 };
 
 function showHomeView() {
@@ -98,6 +103,10 @@ function saveUserInput() {
   currentCover = new Cover(coverImage.src, title.innerText, tagline1.innerText, tagline2.innerText);
 };
 
+function saveCurrentCover() {
+  if (!savedCovers.includes(currentCover))
+  savedCovers.push(currentCover);
+}
 // We've provided one function to get you started
 function getRandomIndex(array) {
   var i = Math.floor(Math.random() * array.length);
