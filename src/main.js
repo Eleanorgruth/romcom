@@ -24,7 +24,7 @@ var tagline2Input = document.querySelector('.user-desc2');
 var makeMyBookButton = document.querySelector('.create-new-book-button');
 // We've provided a few variables below
 var savedCovers = [
-  // new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows"),
+  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows"),
 //this will be an array of new Cover instances
 ];
 
@@ -65,6 +65,7 @@ function showForm() {
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
+  savedView.classList.add('hidden');
 };
 
 function showSavedView() {
@@ -100,6 +101,10 @@ function saveUserInput() {
   tagline1.innerText = tagline1Input.value;
   tagline2.innerText = tagline2Input.value;
   currentCover = new Cover(coverImage.src, title.innerText, tagline1.innerText, tagline2.innerText);
+  coverImageInput.value = "";
+  titleInput.value = "";
+  tagline1Input.value = "";
+  tagline2Input.value = "";
 };
 
 function saveCurrentCover() {
