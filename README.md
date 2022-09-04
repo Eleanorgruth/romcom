@@ -22,7 +22,7 @@ Now users can generate a random romance novel cover, create their own and save t
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-![](Desktop/RomCom.png)
+![](/Users/eleanorruth/Desktop/RomCom.png)
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
 This is the first paired project of the Turing Front End Software Development program. We are on week two of the program. We were given five days to complete the project, and spent roughly 20 hours doing paired programming/collaborating over Zoom.  
