@@ -5,7 +5,7 @@ ______________________________________________________
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-We were given a website without functionality, by writing JavaScript we were able to add the following features.
+We were given a website without functionality, by writing JavaScript we were able to add the following features. Visit the live site <a href="https://eleanorgruth.github.io/romcom/">here</a>.
 - Generate random romance novel cover when clicking the Show New Random Cover button
 - Ability to save a cover, store it in the View Saved Covers section, and delete the cover if needed
 - Ability to make your own cover by filling in a form with specified fields
